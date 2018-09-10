@@ -18,7 +18,9 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "nuxt": "latest",
-    "source-map-support": "^0.4.15"
+    "path": "^0.12.7",
+    "source-map-support": "^0.4.15",
+    "vux": "^2.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

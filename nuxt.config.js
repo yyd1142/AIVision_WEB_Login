@@ -1,9 +1,14 @@
+const path = require('path');
+
 module.exports = {
   /*
   ** Headers of the page
   */
+  router: {
+    middleware: 'auth'
+  },
   head: {
-    title: '智慧销售分析系统',
+    title: '欢迎使用智慧销售分析系统',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,6 +23,7 @@ module.exports = {
   */
   css: [
     '@assets/css/main.css',
+    '@assets/icons/iconfont.css',
     'element-ui/lib/theme-chalk/index.css'
   ],
   /*
@@ -35,6 +41,8 @@ module.exports = {
       config.resolve.alias['@components'] = path.join(__dirname, 'components')
       config.resolve.alias['@plugins'] = path.join(__dirname, 'plugins')
       config.resolve.alias['@assets'] = path.join(__dirname, 'assets')
+      config.resolve.alias['@store'] = path.join(__dirname, 'store')
+      config.resolve.alias['@static'] = path.join(__dirname, 'static')
       if (ctx.isClient) {
         // config.module.rules.push({
         //   enforce: 'pre',
@@ -47,6 +55,7 @@ module.exports = {
   },
   plugins: [
     '@plugins/element-ui',
+    '~/utils/auth',
     '~theme/index.css'
   ]
 }
